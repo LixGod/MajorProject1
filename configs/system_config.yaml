@@ -1,0 +1,38 @@
+system:
+  environment: "production"
+  log_level: "INFO"
+
+perception:
+  model: "best.pt"
+  confidence_threshold: 0.35
+  iou_threshold: 0.50
+  imgsz: 640
+  device: "auto"
+  class_mapping:
+    0: "pedestrian"
+    1: "rider"
+    2: "motorcycle"
+    3: "auto-rickshaw"
+    4: "car"
+    5: "truck"
+    6: "bus"
+    7: "ambulance"
+    8: "fire_truck"
+
+control:
+  default_tick_sec: 1.0
+  min_green_sec: 12
+  max_green_sec: 90
+  all_red_clearance_sec: 3
+  gap_out_threshold_sec: 2
+  gap_out_extend_sec: 2
+  w_veh: 1.0
+  w_down: 0.8
+  w_age: 0.05
+  w_max_wait_sec: 120
+
+map:
+  provider: "tomtom"
+  default_city: "Mumbai"
+  default_latitude: 19.0760
+  default_longitude: 72.8777
